@@ -1,0 +1,929 @@
+// Mixin & variables
+
+@mixin icon-small {
+  width: 20px;
+  height: 20px;
+}
+
+@mixin icon-normal {
+  width: 30px;
+  height: 30px;
+}
+
+@mixin icon-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+$main-color: #ffcc66;
+
+@mixin border-bottom {
+  border-bottom: 1px solid $main-color;
+}
+
+@mixin padding {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+body {
+  color: #000;
+  font-family: "Jost", Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  font-weight: 200;
+  line-height: 1.38;
+}
+// header
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 10;
+}
+
+// <div> top-menu
+// <div> menu-container
+.menu-container {
+  display: flex;
+  justify-content: space-between;
+  height: 42px;
+  padding-top: 10px;
+}
+
+.left-menu h2 {
+  margin-top: 0;
+  font-weight: 100;
+}
+
+.left-menu {
+  display: flex;
+  gap: 10px;
+}
+
+.main-title h1 {
+  display: none;
+}
+
+.toolbar {
+  display: flex;
+  gap: 20px;
+  padding-top: 8px;
+  padding-right: 8%;
+}
+
+.toolbar img {
+  @include icon-small;
+}
+
+.menu-container {
+  border-bottom: 1px solid $main-color;
+}
+
+.sub-menu {
+  display: none;
+}
+
+.burger-menu-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.burger-menu:hover .sub-menu,
+.burger-menu:focus-within .sub-menu {
+  display: initial;
+}
+// Please review
+.sub-menu {
+  position: fixed;
+  top: 110px;
+  left: 0;
+  width: 100%;
+  height: 100vw;
+  padding-bottom: 100%;
+  background-color: white;
+  overflow-y: scroll;
+}
+
+// .sub-menu {
+//   position: fixed;
+//   top: 110px;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   padding-bottom: 100%;
+//   background-color: white;
+//   overflow-y: scroll;
+// }
+// ----------
+
+.sub-menu ul {
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+.icon-content {
+  @include icon-small;
+}
+
+.social-media-icon {
+  @include icon-grid;
+  grid-row-gap: 20px;
+  margin-left: 20px;
+  border-bottom: 1px solid $main-color;
+}
+
+.sub-menu li {
+  line-height: 30px;
+  border-bottom: 1px solid $main-color;
+}
+
+.sub-menu a {
+  text-decoration: none;
+  color: #000;
+}
+
+// nav menu
+.nav-menu {
+  display: flex;
+  justify-content: flex-start;
+  gap: 30px;
+  overflow-x: scroll;
+  font-size: 13px;
+  white-space: nowrap;
+  padding: 12px;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #000;
+}
+
+.nav-menu a:hover {
+  color: $main-color;
+}
+
+// header end
+// main
+main {
+  margin-top: 125px;
+}
+
+.main-movie img {
+  border: 1px solid #000;
+}
+
+// main-movie section
+.main-movie {
+  @include border-bottom;
+}
+
+.main-movie > img {
+  width: 100%;
+  height: 200px;
+}
+
+.main-movie p {
+  font-size: 0.8rem;
+}
+
+.movie-introduction {
+  text-align: center;
+}
+// main movie section end
+// monthly movie lineup section
+.monthly-movie-lineup {
+  padding-bottom: 10px;
+  @include border-bottom;
+}
+
+.flex-container-monthly-movie {
+  display: flex;
+  justify-content: flex-start;
+  overflow-x: scroll;
+  gap: 30px;
+  @include padding;
+}
+
+.flex-content-monthly-movie {
+  text-align: center;
+}
+// monthly movie lineup section end
+// pickup movie 1 section
+.pickup-movie-1 {
+  @include padding;
+  @include border-bottom;
+}
+
+.pickup-movie-1 > h3 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.flex-container-pickup-movie-1 {
+  text-align: center;
+}
+
+.flex-content-pickup-movie-1 {
+  margin-bottom: 30px;
+}
+
+.pickup-movie-1-demo {
+  width: 90vw;
+  aspect-ratio: 16/9;
+}
+// pickup movie 1 section end
+// pickup movie 2 section
+.pickup-movie-2 {
+  @include padding;
+  @include border-bottom;
+}
+
+.pickup-movie-2 > h3 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.grid-container-pickup-movie-2 {
+  text-align: center;
+}
+
+.grid-content-pickup-movie-2 {
+  margin-bottom: 30px;
+}
+
+.pickup-movie-2-demo {
+  width: 90vw;
+  aspect-ratio: 16/9;
+}
+
+// pickup movie 2 section
+// newsletter section
+.newsletter {
+  @include padding;
+  @include border-bottom;
+}
+
+.newsletter-subscription h3,
+h4 {
+  font-weight: 200;
+  text-align: center;
+}
+
+.input-box {
+  text-align: center;
+}
+
+.input-box input {
+  width: 300px;
+  height: 30px;
+}
+
+.toggle-switch-1,
+.toggle-switch-2 {
+  margin-top: 25px;
+  margin-left: 10px;
+}
+
+.toggle-switch-1 {
+  display: flex;
+  justify-content: center;
+}
+
+.toggle-switch-2 {
+  display: flex;
+  justify-content: center;
+}
+
+.toggle-switch-1 p {
+  margin-top: 0;
+  position: relative;
+  top: 0;
+  left: -13px;
+}
+
+.toggle-switch-2 p {
+  margin-top: 0;
+  inline-size: 350px;
+  position: relative;
+  top: 0;
+  left: -13px;
+}
+
+.toggle_input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.toggle_label {
+  width: 40px;
+  height: 20px;
+  background: #ccc;
+  position: relative;
+  display: inline-block;
+  border-radius: 40px;
+  transition: 0.4s;
+  box-sizing: border-box;
+}
+
+.toggle_label:after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  background: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  transition: 0.4s;
+}
+
+.toggle_input:checked + .toggle_label {
+  background-color: $main-color;
+}
+
+.toggle_input:checked + .toggle_label:after {
+  left: 20px;
+}
+
+.toggle_button {
+  position: relative;
+  width: 75px;
+  height: 35px;
+}
+
+.toggle-switch-1 p,
+.toggle-switch-2 p {
+  font-size: 0.9rem;
+}
+
+form {
+  text-align: center;
+}
+
+.submit-button {
+  width: 200px;
+  height: 30px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  font-family: "Jost", Helvetica, Arial, sans-serif;
+  background-color: white;
+  color: #000;
+}
+
+.submit-button:hover {
+  cursor: pointer;
+  box-shadow: 0 0.5px #000;
+  color: $main-color;
+}
+// newsletter section end
+// most watched section
+.most-watched {
+  @include padding;
+  @include border-bottom;
+}
+
+.most-watched-demo {
+  width: 300px;
+  height: 200px;
+}
+
+.flex-content-most-watched {
+  text-align: center;
+}
+
+// most watched section end
+// share the love section
+.share-the-love {
+  @include padding;
+  @include border-bottom;
+}
+
+.share-the-love-demo {
+  width: 250px;
+  height: 250px;
+}
+
+.share-the-love h3 {
+  text-align: center;
+}
+.facebook-button,
+.youtube-button {
+  display: none;
+}
+
+.facebook-photo,
+.youtube-photo {
+  text-align: center;
+}
+
+.facebook-photo button,
+.youtube-photo button {
+  width: 200px;
+  height: 30px;
+  margin-top: 25px;
+  font-family: "Jost", Helvetica, Arial, sans-serif;
+  background-color: white;
+}
+
+.facebook-photo button:hover,
+.youtube-photo button:hover {
+  cursor: pointer;
+  box-shadow: 0 0.5px #000;
+  color: $main-color;
+}
+
+.youtube-container {
+  margin-top: 40px;
+}
+
+.youtube-photo button {
+  margin-bottom: 25px;
+}
+
+// share the love section end
+// community section
+.community {
+  @include padding;
+  @include border-bottom;
+}
+
+.membership {
+  text-align: center;
+}
+
+.membership button {
+  margin-top: 40px;
+  width: 300px;
+  height: 30px;
+  margin-top: 25px;
+  font-family: "Jost", Helvetica, Arial, sans-serif;
+  background-color: white;
+}
+
+.membership button:hover {
+  cursor: pointer;
+  box-shadow: 0 0.5px #000;
+  color: $main-color;
+}
+
+.membership a {
+  text-decoration: none;
+  color: #000;
+}
+
+.membership a:hover {
+  cursor: pointer;
+  color: $main-color;
+}
+
+.connect-with-futureness {
+  margin-top: 100px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.social-media-icon-container {
+  padding-top: 30px;
+  @include icon-grid;
+  grid-row-gap: 50px;
+}
+
+.icon-content {
+  @include icon-normal;
+}
+// community section end
+// more to love section
+.more-to-love {
+  @include padding;
+  @include border-bottom;
+}
+
+.more-to-love-demo {
+  width: 200px;
+  height: 200px;
+}
+
+.more-to-love-gallery {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.more-to-love-gallery p {
+  inline-size: 200px;
+  margin: auto;
+}
+
+.more-to-love > h3 {
+  text-align: center;
+}
+
+.more-to-love-container {
+  text-align: center;
+  margin-top: 40px;
+}
+// more-to-love section end
+// social media icon
+.social-media-link {
+  padding: 30px;
+  @include border-bottom;
+  @include icon-grid;
+  grid-row-gap: 50px;
+  justify-items: center;
+}
+// social media link end
+// footer
+footer {
+  @include padding;
+}
+
+.site-link a {
+  display: block;
+  text-align: center;
+  line-height: 80px;
+  font-size: 0.8rem;
+  text-decoration: none;
+  color: #000;
+}
+
+.site-link a:hover {
+  color: $main-color;
+}
+
+.copyrights {
+  text-align: center;
+}
+
+// min-width > 450px
+@media screen and (min-width: 450px) {
+  .toggle-switch-1 {
+    position: relative;
+    left: -4%;
+  }
+}
+
+// min-width > 600px
+@media screen and (min-width: 600px) {
+  // sub-menu
+  .sub-menu {
+    width: 300px;
+  }
+
+  // main movie
+
+  .main-movie img {
+    height: 300px;
+  }
+
+  .main-movie p {
+    inline-size: 70%;
+    margin: auto;
+  }
+
+  .movie-introduction {
+    position: relative;
+    top: -130px;
+  }
+
+  .main-movie {
+    height: 350px;
+  }
+  // main-movie section end
+  // pickup-movie-1 section
+  .flex-container-pickup-movie-1 {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .pickup-movie-1-demo {
+    width: 90%;
+    aspect-ratio: 15/10;
+  }
+
+  .pickup-movie-1-introduction {
+    text-align: left;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  // pickup-movie-1 section end
+  // pickup-movie-2 section
+  .grid-container-pickup-movie-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 20px;
+  }
+
+  .pickup-movie-2-demo {
+    width: 90%;
+    aspect-ratio: 15/10;
+  }
+
+  .pickup-movie-2-introduction {
+    text-align: left;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  // pickup-movie-2 section end
+  // newsletter section
+  .toggle-switch-1 {
+    position: relative;
+    left: -3%;
+  }
+  // newsletter section end
+  // most-watched section
+  .most-watched-demo {
+    width: 350px;
+    height: 250px;
+  }
+
+  .most-watched-introduction p {
+    width: 400px;
+    margin: auto;
+    margin-bottom: 25px;
+  }
+  // most-watched section end
+  // Share the love section
+  .like-button {
+    display: none;
+  }
+
+  .facebook-button,
+  .youtube-button {
+    display: initial;
+  }
+
+  .facebook-icon-2,
+  .youtube-icon-2 {
+    @include icon-normal;
+  }
+
+  .facebook-container,
+  .youtube-container {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    margin-top: 40px;
+  }
+
+  .facebook-button,
+  .youtube-button {
+    padding-top: 30px;
+    line-height: 40px;
+    text-align: center;
+  }
+
+  .fb {
+    position: relative;
+    left: -18%;
+  }
+
+  .facebook-link a,
+  .facebook-text-link a,
+  .youtube-link a,
+  .youtube-text-link a {
+    text-decoration: none;
+    color: #000;
+  }
+
+  .facebook-button-link button,
+  .youtube-button-link button {
+    width: 100px;
+    height: 30px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    font-family: "Jost", Helvetica, Arial, sans-serif;
+    background-color: white;
+    color: #000;
+  }
+
+  .facebook-link a:hover,
+  .facebook-logo-link img:hover,
+  .facebook-text-link a:hover,
+  .facebook-button-link button:hover,
+  .youtube-link a:hover,
+  .youtube-log-link img:hover,
+  .youtube-text-link a:hover,
+  .youtube-button-link button:hover {
+    cursor: pointer;
+    color: $main-color;
+  }
+  .facebook-button-link button:hover {
+    box-shadow: 0 0.5px #000;
+  }
+
+  .facebook-text-link a,
+  .youtube-text-link a {
+    font-size: 0.9rem;
+  }
+
+  .youtube-container {
+    margin-bottom: 40px;
+  }
+  // Share the love section end
+  // Community section
+  .membership p:nth-child(1) {
+    inline-size: 500px;
+    margin: auto;
+    margin-top: 25px;
+  }
+
+  .social-media-icon-container {
+    display: grid;
+    grid-template-columns: repeat(4, 150px);
+    justify-content: center;
+  }
+  // community section end
+  // more to love section
+  .more-to-love-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: -20px;
+    margin-bottom: 25px;
+  }
+
+  // more to love section end
+  // social media link
+  .social-media-link {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+  }
+}
+
+// min-width > 800px
+@media screen and (min-width: 800px) {
+  // top menu
+
+  .main-title h1 {
+    display: initial;
+    font-size: 4rem;
+  }
+
+  .main-title {
+    margin-top: -10px;
+    padding-left: 15%;
+  }
+
+  .menu-container {
+    height: 70px;
+  }
+
+  .left-menu h2 {
+    display: none;
+  }
+
+  .left-menu,
+  .toolbar {
+    align-items: center;
+  }
+
+  .burger-menu-icon {
+    position: relative;
+    left: 30px;
+  }
+
+  .nav-menu {
+    justify-content: center;
+    gap: 50px;
+    overflow-x: hidden;
+    border-bottom: 1px solid $main-color;
+  }
+
+  .sub-menu {
+    top: 123px;
+  }
+
+  // top menu section end
+  // main movie
+
+  .main-movie {
+    height: 500px;
+  }
+
+  .main-movie img {
+    height: 450px;
+  }
+
+  .movie-introduction h3,
+  .movie-introduction p {
+    font-size: 1.2rem;
+  }
+  // main movie section end
+  // newsletter section
+  // newsletter section
+  .toggle-switch-1 {
+    position: relative;
+    left: -2%;
+  }
+  // newsletter section end
+  // most watched section
+  .flex-container-most-watched {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+  }
+
+  .most-watched-introduction p {
+    width: 380px;
+  }
+
+  .most-watched-1 {
+    border-right: 1px solid $main-color;
+    padding-right: 50px;
+  }
+  // most watched section end
+}
+// min-width > 1200px
+@media screen and (min-width: 1200px) {
+  // top menu
+  .burger-menu-icon {
+    position: relative;
+    left: 50px;
+  }
+  // top menu section end
+  // main movie section
+  .main-movie {
+    text-align: center;
+    height: 550px;
+  }
+  .main-movie img {
+    width: 1200px;
+    height: 500px;
+  }
+  // main movie section end
+  // newsletter section
+  .toggle-switch-1 {
+    position: relative;
+    left: -1.5%;
+  }
+  // newsletter section end
+  // share the love section
+  .social-media-container {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+  }
+
+  .facebook-container,
+  .youtube-container {
+    gap: 30px;
+  }
+  // share the love section end
+  // community section
+  .community-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+  }
+
+  .community-container {
+    height: 300px;
+    position: relative;
+    left: 20px;
+    top: -25px;
+  }
+
+  .connect-with-futureness {
+    border-left: 1px solid $main-color;
+    padding-bottom: 50px;
+  }
+
+  .membership button {
+    margin-top: 40px;
+  }
+  // community section end
+  // more to love section
+  .more-to-love-gallery {
+    display: flex;
+    gap: 20px;
+  }
+  .more-to-love-demo {
+    width: 150px;
+    height: 150px;
+  }
+  .gallery-introduction h3 {
+    margin-top: 0;
+  }
+  // more to love section end
+  // footer
+  .site-link {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+  }
+  .copyrights {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+  }
+}
