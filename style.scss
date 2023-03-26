@@ -168,7 +168,7 @@ header {
   display: flex;
   justify-content: flex-start;
   gap: 30px;
-  overflow-x: scroll;
+  overflow-x: auto;
   font-size: 13px;
   white-space: nowrap;
   padding: 12px;
@@ -814,7 +814,6 @@ footer {
   .nav-menu {
     justify-content: center;
     gap: 50px;
-    overflow-x: hidden;
     border-bottom: 1px solid $main-color;
   }
 
